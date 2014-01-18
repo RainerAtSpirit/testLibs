@@ -11,8 +11,6 @@
         console.log('ctx', window.ctx);
     }
 
-
-
     // 1. load infrastructure files from remote host on first time
     // 2. get token to access secure endpoints
     // 3. setup ctx to add bearer token
@@ -29,7 +27,6 @@
             ],
             index = 0;
 
-        console.log('init', runOnce);
         if ( runOnce ) {
             loadScript();
         }
@@ -38,13 +35,10 @@
         }
 
         function loadScript () {
-            //make sure the current index is still a part of the array
+
             if ( index < scripts.length ) {
 
-                //get the script at the current index
                 $.getScript(libsUrl + scripts[index], function() {
-
-                    //once the script is loaded, increase the index and attempt to load the next script
                     console.log('Loaded: ' + scripts[index]);
                     index++;
                     loadScript();
