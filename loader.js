@@ -1,4 +1,4 @@
-/*global $*/
+/*global $, console*/
 (function() {
     'use strict';
 
@@ -24,21 +24,24 @@
 
 
     function init () {
+        loadScript();
 
-        //make sure the current index is still a part of the array
-        if ( index < scripts.length ) {
+        function loadScript(){
+            //make sure the current index is still a part of the array
+            if ( index < scripts.length ) {
 
-            //get the script at the current index
-            $.getScript(scripts[index], function() {
+                //get the script at the current index
+                $.getScript(scripts[index], function() {
 
-                //once the script is loaded, increase the index and attempt to load the next script
-                console.log('Loaded: ' + scripts[index]);
-                index++;
-                loadScript();
-            });
-        }
-        else{
-            getToken();
+                    //once the script is loaded, increase the index and attempt to load the next script
+                    console.log('Loaded: ' + scripts[index]);
+                    index++;
+                    loadScript();
+                });
+            }
+            else{
+                getToken();
+            }
         }
     }
 
