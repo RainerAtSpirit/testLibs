@@ -3,7 +3,7 @@
 (function() {
     'use strict';
     var runOnce = window.runOnce = typeof window.runOnce === 'undefined',
-        token;
+        token = window.token;
 
     init();
 
