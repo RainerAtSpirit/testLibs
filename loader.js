@@ -3,7 +3,7 @@
 (function() {
     'use strict';
     var runOnce = window.runOnce = typeof window.runOnce === 'undefined',
-        token = window.token;
+        token;
 
     init();
 
@@ -58,7 +58,7 @@
                 type: 'POST',
                 data: 'grant_type=password&username=' + username + '&password=' + password
             }).then(function( resp ) {
-                    token = resp.access_token;
+                    token = window.token = resp.access_token;
 
                 }).then(function() {
                     $data.service('/odata/$metadata', function( contextFactory, contextType ) {
