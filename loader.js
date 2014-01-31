@@ -23,7 +23,8 @@
                 'lib/datajs/datajs-1.1.1.min.js',
                 'lib/jayData/1.3.5/jaydata.min.js',
                 'lib/jayData/1.3.5/jaydataproviders/oDataProvider.min.js',
-                'lib/jayData/1.3.5/jaydatamodules/deferred.min.js'
+                'lib/jayData/1.3.5/jaydatamodules/deferred.min.js',
+                'https://raw2.github.com/johnculviner/jquery.fileDownload/master/src/Scripts/jquery.fileDownload.js'
             ],
             index = 0;
 
